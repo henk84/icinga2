@@ -112,6 +112,7 @@ manage_dirs_pattern(icinga2_t, icinga2_log_t, icinga2_log_t)
 manage_files_pattern(icinga2_t, icinga2_log_t, icinga2_log_t)
 manage_lnk_files_pattern(icinga2_t, icinga2_log_t, icinga2_log_t)
 logging_log_filetrans(icinga2_t, icinga2_log_t, { dir file lnk_file })
+logging_send_syslog_msg(icinga2_t)
 
 manage_dirs_pattern(icinga2_t, icinga2_var_lib_t, icinga2_var_lib_t)
 manage_files_pattern(icinga2_t, icinga2_var_lib_t, icinga2_var_lib_t)
@@ -235,8 +236,6 @@ tunable_policy(`icinga2_run_sudo',`
     systemd_dbus_chat_logind(icinga2_t)
     # Without this it works but is very slow
     systemd_write_inherited_logind_sessions_pipes(icinga2_t)
-
-    logging_send_syslog_msg(icinga2_t)
 ')
 
 optional_policy(`
