@@ -85,8 +85,6 @@ files_type(icinga2_cache_t)
 type icinga2_tmp_t;
 files_tmp_file(icinga2_tmp_t)
 
-typeattribute icinga2_t syslog_client_type;
-
 type icinga2_port_t;
 # There is no interface for unreserved_port_type
 typeattribute icinga2_port_t unreserved_port_type;
