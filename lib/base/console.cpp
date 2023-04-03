@@ -193,6 +193,13 @@ void Console::SetWindowsConsoleColor(std::ostream& fp, int color)
 		case Console_BackgroundWhite:
 			attrs |= BACKGROUND_RED | BACKGROUND_GREEN | BACKGROUND_BLUE;
 			break;
+		default: {
+			const auto allBackgroundBits (BACKGROUND_RED | BACKGROUND_GREEN | BACKGROUND_BLUE);
+			const auto currentBits (consoleInfo.wAttributes);
+			const auto currentBackgroundBits (currentBits & allBackgroundBits);
+
+			attrs |= currentBackgroundBits;
+		}
 	}
 
 	if (color & Console_Bold)
