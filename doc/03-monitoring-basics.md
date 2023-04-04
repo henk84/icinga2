@@ -2861,7 +2861,7 @@ apply Dependency "agent-health-check" to Service {
 
 This is described in detail in [this chapter](06-distributed-monitoring.md#distributed-monitoring-health-checks).
 
-### Event Commands <a id="event-commands"></a>
+## Event Commands <a id="event-commands"></a>
 
 Unlike notifications, event commands for hosts/services are called on every
 check execution if one of these conditions matches:
@@ -2890,7 +2890,7 @@ responding and therefore requires a restart. You can also use event handlers
 to forward more details on state changes and events than the typical notification
 alerts provide.
 
-#### Use Event Commands to Send Information from the Master <a id="event-command-send-information-from-master"></a>
+### Use Event Commands to Send Information from the Master <a id="event-command-send-information-from-master"></a>
 
 This example sends a web request from the master node to an external tool
 for every event triggered on a `businessprocess` service.
@@ -2963,7 +2963,7 @@ Content-Type: application/x-www-form-urlencoded
 businessprocess businessprocess CRITICAL SOFT 1
 ```
 
-#### Use Event Commands to Restart Service Daemon via Command Endpoint on Linux <a id="event-command-restart-service-daemon-command-endpoint-linux"></a>
+### Use Event Commands to Restart Service Daemon via Command Endpoint on Linux <a id="event-command-restart-service-daemon-command-endpoint-linux"></a>
 
 This example triggers a restart of the `httpd` service on the local system
 when the `procs` service check executed via Command Endpoint fails. It only
@@ -3078,7 +3078,7 @@ executed command line.
 [root@icinga2-agent1.localdomain /]# tail -f /var/log/icinga2/debug.log | grep restart_service
 ```
 
-#### Use Event Commands to Restart Service Daemon via Command Endpoint on Windows <a id="event-command-restart-service-daemon-command-endpoint-windows"></a>
+### Use Event Commands to Restart Service Daemon via Command Endpoint on Windows <a id="event-command-restart-service-daemon-command-endpoint-windows"></a>
 
 This example triggers a restart of the `httpd` service on the remote system
 when the `service-windows` service check executed via Command Endpoint fails.
@@ -3175,7 +3175,7 @@ You can enable the [debug log](15-troubleshooting.md#troubleshooting-enable-debu
 executed command line in `C:\ProgramData\icinga2\var\log\icinga2\debug.log`.
 
 
-#### Use Event Commands to Restart Service Daemon via SSH <a id="event-command-restart-service-daemon-ssh"></a>
+### Use Event Commands to Restart Service Daemon via SSH <a id="event-command-restart-service-daemon-ssh"></a>
 
 This example triggers a restart of the `httpd` daemon
 via SSH when the `http` service check fails.
